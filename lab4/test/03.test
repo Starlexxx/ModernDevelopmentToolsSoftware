@@ -1,0 +1,10 @@
+a Guitar Ibanez RGA-FX100 700 12
+a Guitar Gibson flying-V 800 13
+a Ukulele Flight NUC310 70 7
+a Piano Yamaha YDP-144 500 1
+ao 0 Andrew 4
+ao 0 Fedor 18
+ao 1 Petr 8
+ao 2 Vasiliy 1
+s
+generate_order

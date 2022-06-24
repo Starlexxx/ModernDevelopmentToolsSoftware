@@ -1,0 +1,30 @@
+image: ubuntu:18.04
+
+stages:
+  - compile
+  - test
+
+# Задаём команды, которые будут выполнены до прогона скриптов
+before_script:
+  - apt-get -y update
+
+# Собираем проект
+compile:
+  stage: compile
+  script:
+  # Устанавливаем пакеты
+  - apt-get -y install gcc g++
+  # Собираем
+  - g++ lab1.cpp -o lab1
+  # Сохраняем в артефактах
+  artifacts:
+    paths:
+    - ./lab1
+    expire_in: 10 minutes
+
+# Автотесты
+test:
+  stage: test
+  script:
+  - ./lab1 > test.out
+  - diff test.sample test.out
